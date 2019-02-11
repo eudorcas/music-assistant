@@ -1,28 +1,47 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    blackHandleClick = () => {
+        console.log("black");
+    };
+    whiteHandleClick = () => {
+        console.log("white");
+    };
+
+    render() {
+        return (
+            <div className="App">
+                <p>Piano</p>
+                <div className={"piano"}>
+                    <div className={"white"} onClick={this.whiteHandleClick}></div>
+                    <div className={"black"} onClick={this.blackHandleClick}></div>
+                    <div className={"white"} onClick={this.whiteHandleClick}></div>
+                    <div className={"black"} onClick={this.blackHandleClick}></div>
+                    <div className={"white"} onClick={this.whiteHandleClick}></div>
+                    <div className={"white"} onClick={this.whiteHandleClick}></div>
+                    <div className={"black"} onClick={this.blackHandleClick}></div>
+                    <div className={"white"} onClick={this.whiteHandleClick}></div>
+                    <div className={"black"} onClick={this.blackHandleClick}></div>
+                    <div className={"white"} onClick={this.whiteHandleClick}></div>
+                    <div className={"black"} onClick={this.blackHandleClick}></div>
+                    <div className={"white"} onClick={this.whiteHandleClick}></div>
+                    <div className={"white"} onClick={this.whiteHandleClick}></div>
+                    <div className={"black desktop"} onClick={this.blackHandleClick}></div>
+                    <div className={"white desktop"} onClick={this.whiteHandleClick}></div>
+                    <div className={"black desktop"} onClick={this.blackHandleClick}></div>
+                    <div className={"white desktop"} onClick={this.whiteHandleClick}></div>
+                    <div className={"white desktop"} onClick={this.whiteHandleClick}></div>
+                    <div className={"black desktop"} onClick={this.blackHandleClick}></div>
+                    <div className={"white desktop"} onClick={this.whiteHandleClick}></div>
+                    <div className={"black desktop"} onClick={this.blackHandleClick}></div>
+                    <div className={"white desktop"} onClick={this.whiteHandleClick}></div>
+                    <div className={"black desktop"} onClick={this.blackHandleClick}></div>
+                    <div className={"white desktop"} onClick={this.whiteHandleClick}></div>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default App;
