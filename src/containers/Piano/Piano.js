@@ -17,31 +17,42 @@ const pianoKeys = [
 
 class Piano extends Component {
     state= {
-        playing: ""
+        playing: "",
+        repeat: false
     };
     blackHandleClick = () => {
         console.log("black");
-        this.setState({
-            playing: "fast"
-        })
+        if (this.state.playing==="fast") {
+            this.setState({repeat: true})
+        }
+        else {
+            this.setState({
+                playing: "fast",
+                repeat: false
+            })
+        }
     };
     whiteHandleClick = () => {
         console.log("white");
-        this.setState({
-            playing: "slow"
-        })
+        if (this.state.playing==="slow") {
+            this.setState({repeat: true})
+        }
+        else {
+            this.setState({
+                playing: "slow",
+                repeat: false
+            })
+        }
 
     };
-    finishedPlaying = () => {
-        console.log("to koniec");
-    };
+
     render() {
         console.log("render");
         const whiteDesktop = [classes.white, classes.desktop];
         const blackDesktop = [classes.black, classes.desktop];
         return (
         <div className={classes.Piano}>
-            <p>{this.state.playing}</p>
+            <p>{this.state.repeat ? "true" : "false"}</p>
             <div className={classes.white} onClick={this.whiteHandleClick}></div>
             <div className={classes.black} onClick={this.blackHandleClick}></div>
             <div className={classes.white} onClick={this.whiteHandleClick}></div>
@@ -67,8 +78,8 @@ class Piano extends Component {
             <div className={blackDesktop.join(" ")} onClick={this.blackHandleClick}></div>
             <div className={whiteDesktop.join(" ")} onClick={this.whiteHandleClick}></div>
             <div className={whiteDesktop.join(" ")} onClick={this.whiteHandleClick}></div>
-            <Sound url={fast} playStatus={this.state.playing==='fast' ? Sound.status.PLAYING : Sound.status.PAUSED} />
-            <Sound url={slow} playStatus={this.state.playing==='slow' ? Sound.status.PLAYING : Sound.status.PAUSED}/>
+            <Sound url={fast} playStatus={((this.state.playing==='fast' && this.state.repeat) || this.state.playing==='fast') ? Sound.status.PLAYING : Sound.status.STOPPED} />
+            <Sound url={slow} playStatus={((this.state.playing==='slow' &&  this.state.repeat) || this.state.playing==='slow')  ? Sound.status.PLAYING : Sound.status.STOPPED}/>
         </div>
         )
     }
