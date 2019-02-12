@@ -1,0 +1,53 @@
+.Piano {
+  height: 50vh;
+  display: flex;
+  width: 90vw;
+  margin: 0 auto;
+}
+.white {
+  border: 2px solid black;
+  z-index: 1;
+  height: 100%;
+  width: calc(100%/15);
+  transition: 0.2s;
+
+}
+.black {
+  border: 2px solid black;
+  z-index: 2;
+  background: black;
+  height: 60%;
+  width: calc((100%/15)/2);
+  margin: 0 -1.5vw;
+  transition: 0.5s;
+}
+
+.white:hover {
+  background: #F5F5F5;
+}
+
+.black:hover {
+  background: #303030;
+  border: none;
+}
+
+.white:active {
+  transform: scale(1.05);
+}
+.black:active {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .desktop {
+    display: none;
+  }
+  .white {
+    width: calc(100%/8);
+  }
+  .black {
+    width: calc((100%/8)/2);
+    margin: 0 -3vw;
+  }
+
+}
