@@ -5,6 +5,7 @@ import Sound from "react-sound";
 const pianoKey = (props) => {
     const color = props.type === "white" ? classes.white : classes.black;
     const soundPath = require("../../assets/audio/" + props.value + ".mp3");
+
     return (
         <div className={color} onClick={props.clicked}>
             <Sound url={soundPath}
