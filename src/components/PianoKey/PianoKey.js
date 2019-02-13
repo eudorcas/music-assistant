@@ -5,9 +5,11 @@ import Sound from "react-sound";
 const pianoKey = (props) => {
     const color = props.type === "white" ? classes.white : classes.black;
     const soundPath = require("../../assets/audio/" + props.value + ".mp3");
+    const desktop = props.id > 12 ? classes.desktop : null;
+    const keyClasses = [color, desktop].join(" ");
 
     return (
-        <div className={color} onClick={props.clicked}>
+        <div className={keyClasses} onClick={props.clicked}>
             <Sound url={soundPath}
                    playStatus={props.playing === props.value ? Sound.status.PLAYING : Sound.status.STOPPED}/>
             <Sound url={soundPath}
