@@ -60,8 +60,6 @@ class Metronome extends Component {
     };
 
     playSound = () => {
-        console.log(this.state.partOfMeasure % this.state.beatsPerMeasure === 0);
-
         if(this.state.partOfMeasure % this.state.beatsPerMeasure === 0) {
             this.sound1.play();
         }
@@ -71,9 +69,7 @@ class Metronome extends Component {
         this.setState(prevState => ({
             partOfMeasure: (prevState.partOfMeasure + 1) % prevState.beatsPerMeasure
         }));
-
     };
-
 
     toggleBeat = () => {
         if (!this.state.beating) {
