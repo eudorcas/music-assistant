@@ -12,7 +12,7 @@ class Metronome extends Component {
             beatsPerMinute: 60,
             beating: false,
             beatsPerMeasure: "2",
-            partOfMeasure: 1,
+            partOfMeasure: 0,
             interval: null
 
         };
@@ -22,42 +22,76 @@ class Metronome extends Component {
 
 
     changeBPMinuteHandler = (e) => {
-        this.setState({
-            beatsPerMinute: e.currentTarget.value
-        })
-    };
-    changeBPMeasureHandler = (e) => {
-        this.setState({
-            beatsPerMeasure: e.currentTarget.value
-        })
-    };
-    playSound = () => {
-        if (this.state.partOfMeasure == this.state.beatsPerMeasure) {
-            console.log("kończę");
-            this.sound2.play().then(()=> {
-                this.setState({
-                    partOfMeasure: 1
-                });
-            });
-        }
-
-        else if (this.state.partOfMeasure === 1) {
-            console.log("ja zaczynam");
-            this.sound1.play().then(()=>{
-                this.setState((prevState) => {
-                    return {partOfMeasure: prevState.partOfMeasure + 1}
-                })
-            });
+        const bpm = e.currentTarget.value;
+        if(this.state.beating) {
+            clearInterval(this.state.interval);
+            const interval = setInterval(
+                this.playSound,
+                (60 / bpm) * 1000);
+            this.setState({
+                beating: true,
+                interval: interval,
+                beatsPerMinute: bpm
+            }, this.playSound);
         }
         else {
-            console.log("kolejna");
-            this.sound2.play().then(()=> {
-                this.setState((prevState) => {
-                    return {partOfMeasure: prevState.partOfMeasure + 1}
-                })
+            this.setState({
+                beatsPerMinute: bpm
             });
         }
     };
+    changeBPMeasureHandler = (e) => {
+        const bpm = e.currentTarget.value;
+        if(this.state.beating) {
+            clearInterval(this.state.interval);
+            const interval = setInterval(this.playSound,
+                (60 / this.state.beatsPerMinute) * 1000);
+            this.setState({
+                beatsPerMeasure: bpm,
+                interval: interval
+            }, this.playSound)
+        }
+        else {
+            this.setState({
+                beatsPerMeasure: bpm
+            })
+        }
+
+    };
+
+    playSound = () => {
+
+        if(this.state.partOfMeasure % this.state.beatsPerMeasure === 0) {
+            this.sound2.play();
+            console.log("ze środka", this.state.partOfMeasure);
+        } else {
+            this.sound1.play();
+            console.log("ze środka", this.state.partOfMeasure);
+        }
+        this.setState(prevState => ({
+            partOfMeasure: (prevState.partOfMeasure + 1) % prevState.beatsPerMeasure
+        }), ()=>{console.log("jestem tu")});
+
+        // if (this.state.partOfMeasure == this.state.beatsPerMeasure) {
+        //     this.setState({
+        //         partOfMeasure: 1
+        //     }, this.playSound(1));
+        // }
+        //
+        // else if (this.state.partOfMeasure === 1) {
+        //     this.setState((prevState) => {
+        //         return {partOfMeasure: prevState.partOfMeasure + 1}
+        //     }, this.playSound(2));
+        //
+        // }
+        // else {
+        //     this.setState((prevState) => {
+        //         return {partOfMeasure: prevState.partOfMeasure + 1}
+        //     }, this.playSound(2));
+        //
+        // }
+    };
+
 
     toggleBeat = () => {
         if (!this.state.beating) {
@@ -74,7 +108,7 @@ class Metronome extends Component {
             this.setState({
                 beating: false,
                 interval: null,
-                partOfMeasure: 1
+                partOfMeasure: 0
             })
         }
 
@@ -83,6 +117,7 @@ class Metronome extends Component {
     render() {
         return (
             <div className={classes.Metronome}>
+                <p>{this.state.partOfMeasure}</p>
                 <MetronomeAnimation
                     beating={this.state.beating}
                     counter={this.state.partOfMeasure}
