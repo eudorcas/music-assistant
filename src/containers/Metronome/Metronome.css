@@ -2,9 +2,4 @@
   width: 80vw;
   margin: 50px auto;
   height: 70vh;
-  /*border: 2px solid black;*/
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
 }
