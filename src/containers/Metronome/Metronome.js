@@ -117,7 +117,6 @@ class Metronome extends Component {
     render() {
         return (
             <div className={classes.Metronome}>
-                <p>{this.state.partOfMeasure}</p>
                 <MetronomeAnimation
                     beating={this.state.beating}
                     counter={this.state.partOfMeasure}
