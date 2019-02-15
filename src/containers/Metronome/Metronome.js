@@ -60,36 +60,18 @@ class Metronome extends Component {
     };
 
     playSound = () => {
+        console.log(this.state.partOfMeasure % this.state.beatsPerMeasure === 0);
 
         if(this.state.partOfMeasure % this.state.beatsPerMeasure === 0) {
-            this.sound2.play();
-            console.log("ze środka", this.state.partOfMeasure);
-        } else {
             this.sound1.play();
-            console.log("ze środka", this.state.partOfMeasure);
+        }
+        else {
+            this.sound2.play();
         }
         this.setState(prevState => ({
             partOfMeasure: (prevState.partOfMeasure + 1) % prevState.beatsPerMeasure
-        }), ()=>{console.log("jestem tu")});
+        }));
 
-        // if (this.state.partOfMeasure == this.state.beatsPerMeasure) {
-        //     this.setState({
-        //         partOfMeasure: 1
-        //     }, this.playSound(1));
-        // }
-        //
-        // else if (this.state.partOfMeasure === 1) {
-        //     this.setState((prevState) => {
-        //         return {partOfMeasure: prevState.partOfMeasure + 1}
-        //     }, this.playSound(2));
-        //
-        // }
-        // else {
-        //     this.setState((prevState) => {
-        //         return {partOfMeasure: prevState.partOfMeasure + 1}
-        //     }, this.playSound(2));
-        //
-        // }
     };
 
 
