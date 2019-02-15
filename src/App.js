@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Piano from './containers/Piano/Piano';
+import Metronome from "./containers/Metronome/Metronome";
 import classes from './App.css';
+
 
 class App extends Component {
 
@@ -8,8 +10,8 @@ class App extends Component {
     render() {
         return (
             <div className={classes.App}>
-                <p>Piano</p>
-                <Piano />
+                <Metronome/>
+                {/*<Piano />*/}
             </div>
         );
     }

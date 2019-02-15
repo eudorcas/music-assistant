@@ -67,8 +67,8 @@ class Piano extends Component {
                 clicked={() => this.handlePlay(el.value)}/>
 
         });
-        // const whiteDesktop = [classes.white, classes.desktop];
-        // const blackDesktop = [classes.black, classes.desktop];
+
+
         return (
             <div className={classes.Piano}>
                 {piano}

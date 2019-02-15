@@ -1,0 +1,124 @@
+.MetronomeControls {
+  width: 80%;
+  height: 60%;
+  border: 2px solid black;
+  margin: 20px auto 30px auto;
+  font-size: 26px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.Minute {
+  width: 90%;
+  text-align: center;
+}
+
+.Range {
+  font-size: 1em;
+  width: 90%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  background: black;
+  outline: none;
+}
+
+.Range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: black;
+  cursor: pointer;
+}
+.Range:active::-webkit-slider-thumb {
+  background-color: lightpink;
+}
+
+.Bold {
+  display: inline-block;
+  width: 1.5em;
+  font-size: 1.5em;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.Measure label {
+  display: inline-block;
+  width: 25px;
+  margin: 0 5px;
+  font-size: 1.5em;
+  cursor: pointer;
+
+}
+
+.Measure label:hover {
+  color: lightseagreen;
+}
+
+.Measure input[type="radio"]:checked + label {
+  border-bottom: 3px solid black;
+}
+
+.Play {
+  display: block;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: white;
+  outline: none;
+  border: 2px solid black;
+  position: relative;
+  color: black;
+  transition: 0.2s;
+  font-size: 25px;
+  cursor: pointer;
+
+}
+.Play:before {
+  content: "";
+  background-color: lightgreen;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  z-index: -1;
+
+}
+
+.Play:hover {
+  background-color: lightgreen;
+  color: white;
+  border-color: lightgreen;
+}
+
+
+.Play:hover:before {
+  animation: bubble 1s;
+
+}
+
+@keyframes bubble {
+  50% {
+    transform: scale(2.3, 2.3);
+    opacity: 0;
+  }
+  99% {
+    transform: scale(0.001, 0.001);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.001, 0.001);
+    opacity: 1;
+  }
+}
+
+

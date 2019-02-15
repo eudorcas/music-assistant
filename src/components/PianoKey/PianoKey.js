@@ -4,7 +4,7 @@ import Sound from "react-sound";
 
 const pianoKey = (props) => {
     const color = props.type === "white" ? classes.white : classes.black;
-    const soundPath = require("../../assets/audio/" + props.value + ".mp3");
+    const soundPath = require("../../assets/audio/piano/" + props.value + ".mp3");
     const desktop = props.id > 12 ? classes.desktop : null;
     const keyClasses = [color, desktop].join(" ");
 
