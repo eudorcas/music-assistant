@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import PianoKey from '../../components/PianoKey/PianoKey';
-
 import classes from './Piano.css';
-
 
 const pianoKeys = [
     {value: "c4", type: "white"},
@@ -32,9 +30,7 @@ const pianoKeys = [
     {value: "c6", type: "white"}
 ];
 
-
 class Piano extends Component {
-
 
     state = {
         playing: ""
@@ -54,7 +50,6 @@ class Piano extends Component {
 
     };
 
-
     render() {
         const piano = pianoKeys.map((el, index) => {
             return <PianoKey
@@ -64,7 +59,6 @@ class Piano extends Component {
                 type={el.type}
                 value={el.value}
                 clicked={() => this.handlePlay(el.value)}/>
-
         });
 
 
@@ -77,4 +71,3 @@ class Piano extends Component {
 }
 
 export default Piano;
-

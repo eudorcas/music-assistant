@@ -7,7 +7,7 @@ const metronomeAnimation = props => {
     return (
         <div className={classes.MetronomeAnimation}>
             <div className={props.beating && props.counter === 1 ? bigActive.join(" ") : classes.BigBubble} />
-            <div className={(props.beating && props.counter != 1) ? smallActive.join(" ") : classes.SmallBubble} />
+            <div className={(props.beating && props.counter !== 1) ? smallActive.join(" ") : classes.SmallBubble} />
         </div>
     );
 };

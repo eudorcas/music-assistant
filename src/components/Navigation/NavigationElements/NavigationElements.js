@@ -13,9 +13,6 @@ const navigationElements = () => {
             </li>
         </ul>
     )
-
-
 };
-
 
 export default navigationElements;

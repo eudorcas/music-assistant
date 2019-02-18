@@ -15,9 +15,7 @@ const metronomeControls = props => {
                         name={"bPMinute"}
                         value={props.beatsPerMinute}
                         onChange={props.changeBPMinuteHandler}/>
-
                 </label>
-
             </div>
             <div className={classes.Measure}>
                 <input
@@ -28,7 +26,6 @@ const metronomeControls = props => {
                     checked={props.beatsPerMeasure === "2"}
                     onChange={props.changeBPMeasureHandler}/>
                 <label htmlFor={"2"}>2</label>
-
                 <input
                     type={"radio"}
                     id={"3"}
@@ -37,7 +34,6 @@ const metronomeControls = props => {
                     checked={props.beatsPerMeasure === "3"}
                     onChange={props.changeBPMeasureHandler}/>
                 <label htmlFor={"3"}>3</label>
-
                 <input
                     type={"radio"}
                     id={"4"}

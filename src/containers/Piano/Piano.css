@@ -1,6 +1,6 @@
 .Piano {
-  height: 50vh;
-  display: flex;
   width: 90vw;
+  height: 50vh;
   margin: 60px auto 60px auto;
+  display: flex;
 }

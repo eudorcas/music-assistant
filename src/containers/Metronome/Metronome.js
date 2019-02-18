@@ -56,7 +56,6 @@ class Metronome extends Component {
                 beatsPerMeasure: bpm
             })
         }
-
     };
 
     playSound = () => {
@@ -89,7 +88,6 @@ class Metronome extends Component {
                 partOfMeasure: 0
             })
         }
-
     };
 
     render() {

@@ -2,12 +2,11 @@
   width: 80%;
   height: 60%;
   margin: 20px auto 30px auto;
-  font-size: 1.3em;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-
+  font-size: 1.3em;
 }
 
 .Minute {
@@ -16,31 +15,32 @@
 }
 
 .Range {
-  font-size: 1em;
   width: 90%;
+  height: 2px;
   -webkit-appearance: none;
   appearance: none;
-  height: 2px;
   background: black;
   outline: none;
+  font-size: 1em;
 }
 
 .Range::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
   width: 15px;
   height: 15px;
-  border-radius: 50%;
+  -webkit-appearance: none;
+  appearance: none;
   background: black;
+  border-radius: 50%;
   cursor: pointer;
 }
+
 .Range:active::-webkit-slider-thumb {
   background-color: lightpink;
 }
 
 .Bold {
-  display: inline-block;
   width: 1.5em;
+  display: inline-block;
   font-size: 1.5em;
 }
 
@@ -49,12 +49,11 @@ input[type="radio"] {
 }
 
 .Measure label {
-  display: inline-block;
   width: 25px;
+  display: inline-block;
   margin: 0 5px;
   font-size: 1.5em;
   cursor: pointer;
-
 }
 
 .Measure label:hover {
@@ -66,20 +65,20 @@ input[type="radio"] {
 }
 
 .Play {
-  display: block;
   width: 70px;
   height: 70px;
-  border-radius: 50%;
-  background-color: white;
+  display: block;
   outline: none;
   border: 2px solid black;
-  position: relative;
+  border-radius: 50%;
+  background-color: white;
   color: black;
-  transition: 0.2s;
+  position: relative;
   font-size: 0.8em;
   cursor: pointer;
-
+  transition: 0.2s;
 }
+
 .Play:before {
   content: "";
   background-color: lightgreen;
@@ -90,7 +89,6 @@ input[type="radio"] {
   bottom: 0;
   border-radius: 50%;
   z-index: -1;
-
 }
 
 .Play:hover {
@@ -99,10 +97,8 @@ input[type="radio"] {
   border-color: lightgreen;
 }
 
-
 .Play:hover:before {
   animation: bubble 1s;
-
 }
 
 @keyframes bubble {

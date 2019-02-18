@@ -3,7 +3,6 @@ import NavigationElements from '../NavigationElements/NavigationElements';
 import Backdrop from './Backdrop/Backdrop';
 import classes from './Sidebar.css';
 
-
 const sidebar = (props) => {
     let navClasses = [classes.Sidebar, classes.close];
     if (props.opened) {

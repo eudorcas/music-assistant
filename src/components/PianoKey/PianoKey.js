@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from './PianoKey.css';
 import Sound from "react-sound";
+import classes from './PianoKey.css';
 
 const pianoKey = (props) => {
     const color = props.type === "white" ? classes.white : classes.black;

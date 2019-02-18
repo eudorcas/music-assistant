@@ -9,15 +9,12 @@
 }
 
 .Toolbar h1 {
-  font-size: 3em;
   margin-bottom: 0;
-
-
+  font-size: 3em;
 }
 
 .Logo {
   display: none;
-
 }
 
 .Desktop {

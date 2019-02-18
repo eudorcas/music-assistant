@@ -1,18 +1,18 @@
 .white {
+  width: calc(100%/15);
+  height: 100%;
   border: 2px solid black;
   z-index: 1;
-  height: 100%;
-  width: calc(100%/15);
   transition: 0.2s;
-
 }
+
 .black {
+  width: calc((100%/15)/2);
+  height: 60%;
+  margin: 0 -1.5vw;
+  background: black;
   border: 2px solid black;
   z-index: 2;
-  background: black;
-  height: 60%;
-  width: calc((100%/15)/2);
-  margin: 0 -1.5vw;
   transition: 0.5s;
 }
 
@@ -28,6 +28,7 @@
 .white:active {
   transform: scale(1.05);
 }
+
 .black:active {
   transform: scale(1.1);
 }

@@ -1,19 +1,19 @@
 .NavigationElements {
+  height: 15%;
   margin: 30px 0;
   padding: 0;
-  list-style: none;
   display: flex;
+  justify-content: space-between;
   flex-flow: column;
   align-items: center;
-  justify-content: space-between;
-  height: 15%;
+  list-style: none;
 }
 
 .Element a {
-  text-decoration: none;
-  color: black;
   padding: 10px;
   margin: 10px;
+  text-decoration: none;
+  color: black;
   font-size: 1.5em;
 }
 
@@ -23,15 +23,14 @@
 
 @media (min-width: 769px) {
   .NavigationElements {
-    flex-flow: row;
-    margin: 0;
     height: 100%;
+    margin: 0;
     justify-content: normal;
+    flex-flow: row;
   }
   .Element a {
     margin: 5px 5px 0 5px;
   }
-
 }
 
 .active {

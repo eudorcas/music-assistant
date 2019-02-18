@@ -1,25 +1,18 @@
 .Sidebar {
-  position: fixed;
   width: 70vw;
   height: 100%;
+  background-color: white;
+  border-right: 2px solid black;
+  position: fixed;
   left: 0;
   top: 0;
   z-index: 20;
-  background-color: white;
   transition: 0.3s;
-  border-right: 2px solid black;
-
 }
+
 .NavigationElements {
   width: 100%;
   height: 100%;
-
-}
-
-@media (min-width: 769px) {
-  .Sidebar {
-    display: none;
-  }
 }
 
 .open {
@@ -28,4 +21,10 @@
 
 .close {
   transform: translateX(-100%);
+}
+
+@media (min-width: 769px) {
+  .Sidebar {
+    display: none;
+  }
 }
