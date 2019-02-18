@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {withRouter} from 'react-router-dom';
 import MetronomeControls from '../../components/MetronomeControls/MetronomeControls';
 import MetronomeAnimation from '../../components/MetronomeAnimation/MetronomeAnimation';
 import sound1 from '../../assets/audio/metronome/click1.wav';
@@ -19,7 +20,19 @@ class Metronome extends Component {
         this.sound1 = new Audio(sound1);
         this.sound2 = new Audio(sound2);
     }
+    componentWillMount() {
+        this.unlisten = this.props.history.listen((location, action) => {
+            clearInterval(this.state.interval);
+            this.setState({
+                interval: null,
+                beating: false
+            })
+        });
+    }
 
+    componentWillUnmount() {
+        this.unlisten();
+    }
 
     changeBPMinuteHandler = (e) => {
         const bpm = e.currentTarget.value;
@@ -109,4 +122,4 @@ class Metronome extends Component {
     }
 }
 
-export default Metronome;
+export default withRouter(Metronome);
