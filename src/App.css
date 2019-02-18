@@ -1,4 +1,13 @@
 .App {
-
+  text-align: center;
 }
 
+.App a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+.App a:hover {
+  color: lightpink;
+}
