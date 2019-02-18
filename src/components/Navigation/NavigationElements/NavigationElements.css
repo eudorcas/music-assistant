@@ -1,0 +1,32 @@
+.NavigationElements {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .NavigationElements {
+    flex-flow: row;
+  }
+
+}
+
+.Element a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  margin: 5px 5px 0 5px;
+  font-size: 1.5em;
+}
+
+.Element a:hover {
+  color: lightgrey;
+}
+
+.active {
+  border-bottom: 2px solid black;
+}

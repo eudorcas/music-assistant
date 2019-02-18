@@ -1,0 +1,27 @@
+.Toolbar {
+  height: 20vh;
+  width: 90vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Toolbar h1 {
+  font-size: 3em;
+  margin-bottom: 0;
+}
+
+.Logo {
+
+}
+
+.Desktop {
+  display: none;
+}
+
+@media (min-width: 758px) {
+  .Desktop {
+    display: block;
+  }
+}

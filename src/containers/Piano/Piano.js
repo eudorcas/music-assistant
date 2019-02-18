@@ -56,7 +56,6 @@ class Piano extends Component {
 
 
     render() {
-        console.log("render", this.state.playing);
         const piano = pianoKeys.map((el, index) => {
             return <PianoKey
                 id={index}
