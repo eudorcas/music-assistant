@@ -11,9 +11,9 @@ const sidebar = (props) => {
     }
     return (
         <>
-            <Backdrop show={props.opened} clicked={props.backdropClicked}/>
+            <Backdrop show={props.opened} clicked={props.clicked}/>
             <div className={navClasses.join(" ")}>
-                <nav className={classes.NavigationElements}>
+                <nav className={classes.NavigationElements} onClick={props.clicked}>
                     <NavigationElements/>
                 </nav>
             </div>

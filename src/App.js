@@ -28,7 +28,7 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <div className={classes.App}>
-                    <Sidebar opened={this.state.showSidebar} backdropClicked={this.closeSidebar}/>
+                    <Sidebar opened={this.state.showSidebar} clicked={this.closeSidebar}/>
                     <Toolbar hamburgerClicked={this.openSidebar}/>
                     <Switch>
                         <Route path={"/"} exact component={Piano} />
