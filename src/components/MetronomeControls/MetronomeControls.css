@@ -2,7 +2,7 @@
   width: 80%;
   height: 60%;
   margin: 20px auto 30px auto;
-  font-size: 26px;
+  font-size: 1.3em;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -28,8 +28,8 @@
 .Range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background: black;
   cursor: pointer;
@@ -67,8 +67,8 @@ input[type="radio"] {
 
 .Play {
   display: block;
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   background-color: white;
   outline: none;
@@ -76,7 +76,7 @@ input[type="radio"] {
   position: relative;
   color: black;
   transition: 0.2s;
-  font-size: 25px;
+  font-size: 0.8em;
   cursor: pointer;
 
 }
@@ -117,6 +117,21 @@ input[type="radio"] {
   100% {
     transform: scale(0.001, 0.001);
     opacity: 1;
+  }
+}
+
+@media (min-width: 475px) {
+  .MetronomeControls {
+    font-size: 1.7em;
+  }
+  .Play {
+    width: 90px;
+    height: 90px;
+    font-size: 1em;
+  }
+  .Range::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
   }
 }
 
