@@ -6,24 +6,22 @@
   flex-flow: column;
   align-items: center;
   justify-content: space-between;
-  height: 10%;
-
-
+  height: 15%;
 }
+
 .Element a {
   text-decoration: none;
   color: black;
   padding: 10px;
   margin: 10px;
   font-size: 1.5em;
-
-
 }
 
 .Element a:hover {
   color: lightgrey;
 }
-@media (min-width: 768px) {
+
+@media (min-width: 769px) {
   .NavigationElements {
     flex-flow: row;
     margin: 0;
@@ -35,8 +33,6 @@
   }
 
 }
-
-
 
 .active {
   border-bottom: 2px solid black;

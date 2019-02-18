@@ -3,7 +3,7 @@
   width: 90vw;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   position: relative;
 }
@@ -11,9 +11,12 @@
 .Toolbar h1 {
   font-size: 3em;
   margin-bottom: 0;
+
+
 }
 
 .Logo {
+  display: none;
 
 }
 
@@ -21,8 +24,26 @@
   display: none;
 }
 
-@media (min-width: 758px) {
+@media (min-width: 475px) {
+  .Toolbar {
+    justify-content: space-between;
+  }
+  .Toolbar h1 {
+    font-size: 2em;
+  }
+  .Logo {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 770px) {
   .Desktop {
     display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .Toolbar h1 {
+    font-size: 3em;
   }
 }

@@ -19,7 +19,7 @@
   background-color: black;
 }
 
-@media (min-width: 756px) {
+@media (min-width: 769px) {
   .Hamburger {
     display: none;
   }
